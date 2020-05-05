@@ -1,9 +1,13 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
 import Header from './components/header';
+import Cart from './components/cart';
+import { View } from 'react-native';
 
 export default function App() {
   return (
-    <Header label="Skald Music Webshop"/>
+    <View>
+      <Header label="  Skald Music Webshop  "/>
+      <Cart />
+    </View>
   );
 }

@@ -1,10 +1,14 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
+import { SimpleLineIcons as Icon } from '@expo/vector-icons';
 
 const Header = ({label}) => {
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>{label}</Text>
+            <Text style={styles.text}>
+                <Icon name="music-tone-alt" size={30} color="black"></Icon>
+                {label}
+            </Text>
         </View>
     );
 }
