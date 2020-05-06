@@ -15,10 +15,16 @@ const Header = ({label}) => {
 
 const styles = StyleSheet.create({
     container: {
-      padding: 60,
+      padding: 35,
       backgroundColor: '#FF430A',
       alignItems: 'center',
       justifyContent: 'center',
+      borderLeftColor: '#FFA81C',
+      borderLeftWidth: 5,
+      borderTopColor: '#FFA81C',
+      borderTopWidth: 25,
+      borderRightColor: '#FFA81C',
+      borderRightWidth: 5
     },
     text: {
         color: 'black',

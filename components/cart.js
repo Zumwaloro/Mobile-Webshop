@@ -27,7 +27,11 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        backgroundColor: '#EBA553'
+        backgroundColor: '#EBA553',
+        borderLeftColor: '#FFA81C',
+        borderLeftWidth: 5,
+        borderRightColor: '#FFA81C',
+        borderRightWidth: 5
     },
     text: {
         color: 'black',

@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet, FlatList, ScrollView } from 'react-native';
+import { FlatList, ScrollView } from 'react-native';
 import accoustic from '../images/accoustic.jpg';
 import electric from '../images/electric.jpeg';
 import bass from '../images/bass.jpg';
