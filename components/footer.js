@@ -6,6 +6,7 @@ const Footer = () => {
     return(
         <View style={styles.container}>
             <Text style={styles.text}>Skald©</Text>
+            <Icon name="contacts" size={45} color='black' />
             <Icon name="facebook-square" size={45} color='black' />            
             <Icon name="instagram" size={45} color='black' />
         </View>
