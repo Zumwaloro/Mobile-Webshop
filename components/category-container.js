@@ -14,12 +14,13 @@ const CategoryContainer = () => {
         {label: "Electric guitars", img: electric},
         {label: "Bass guitars", img: bass},
         {label: "Classical instruments", img: classical},
-        {label: "Folk instruments", img: folk},
+        {label: "Folk instruments", img: folk}
     ]
 
     return (
         <ScrollView>
-            <FlatList           
+            <FlatList
+                contentContainerStyle={{flexGrow: 1}}           
                 data={categories}
                 renderItem={ ({item}) => (
                     <Category label={item.label} imgSource={item.img}/>

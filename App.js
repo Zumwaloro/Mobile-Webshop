@@ -6,10 +6,16 @@ import { View, StyleSheet } from 'react-native';
 
 export default function App() {
   return (
-    <View>
+    <View style={styles.container}>
       <Header label="  Skald Music Webshop  "/>
       <Cart />
       <CategoryContainer />
     </View>
   );
-}
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  }
+});
