@@ -1,24 +1,13 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
-
-import Header from './components/header';
-import Cart from './components/cart';
-import CategoryContainer from './components/category-container';
-import Footer from './components/footer';
+import CategoriesScreen from './screens/categories-screen';
+import BassScreen from './screens/bass-screen';
+import GuitarScreen from './screens/guitar-screen';
+import AcousticScreen from './screens/acoustic-screen';
+import ClassicalScreen from './screens/classical-screen';
+import FolkScreen from './screens/folk-screen';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Header label="  Skald Music Webshop  "/>
-      <Cart />
-      <CategoryContainer />
-      <Footer />
-    </View>
+   <FolkScreen />
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  }
-});
