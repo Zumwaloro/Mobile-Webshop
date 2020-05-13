@@ -13,19 +13,8 @@ function CategoriesScreen(props) {
   }
 
   return (
-    <View style={styles.container}>
-      <Header label="  Skald Music Webshop  "/>
-      <Cart />
       <CategoryContainer navigate={navigate}/>
-      <Footer />
-    </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  }
-});
 
 export default CategoriesScreen;
