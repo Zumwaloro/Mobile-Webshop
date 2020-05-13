@@ -1,11 +1,11 @@
 import React from 'react';
 import {View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
-const Category = ({label, imgSource}) => {
+const Category = ({label, imgSource, action}) => {
 
 
     return (
-        <TouchableOpacity>
+        <TouchableOpacity onPress={action}>
             <View style={styles.container}>
                 <Image source={imgSource} style={styles.img}/>
                 <Text style={styles.text}>{label}</Text>

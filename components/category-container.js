@@ -7,14 +7,14 @@ import folk from '../images/folk.png';
 import classical from '../images/classical.png';
 import Category from './category';
 
-const CategoryContainer = () => {
+const CategoryContainer = ({navigate}) => {
 
     const categories = [
-        {label: "Accoustic guitars", img: accoustic},
-        {label: "Electric guitars", img: electric},
-        {label: "Bass guitars", img: bass},
-        {label: "Classical instruments", img: classical},
-        {label: "Folk instruments", img: folk}
+        {label: "Acoustic guitars", img: accoustic, route: "Acoustic"},
+        {label: "Electric guitars", img: electric, route: "Guitar"},
+        {label: "Bass guitars", img: bass, route: "Bass"},
+        {label: "Classical instruments", img: classical, route: "Classical"},
+        {label: "Folk instruments", img: folk, route: "Folk"}
     ]
 
     return (
@@ -23,7 +23,9 @@ const CategoryContainer = () => {
                 contentContainerStyle={{flexGrow: 1}}           
                 data={categories}
                 renderItem={ ({item}) => (
-                    <Category label={item.label} imgSource={item.img}/>
+                    <Category label={item.label} imgSource={item.img}
+                              action={()=>navigate(item.route)}
+                    />
                 )}
             />
         </ScrollView>
