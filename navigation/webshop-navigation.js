@@ -49,13 +49,16 @@ const electric = [
 
 const WebShopNavigation = createStackNavigator(
     {
-    Categories: CategoriesScreen,
-    Acoustic: () => <Screen instruments={acoustic} />,
-    Guitar: () => <Screen instruments={electric} />,
-    Bass: () => <Screen instruments={bass} />,
-    Classical: () => <Screen instruments={classical} />,
-    Folk: () => <Screen instruments={folk} />,
-    }
+        Categories: CategoriesScreen,
+        Acoustic: () => <Screen instruments={acoustic} />,
+        Guitar: () => <Screen instruments={electric} />,
+        Bass: () => <Screen instruments={bass} />,
+        Classical: () => <Screen instruments={classical} />,
+        Folk: () => <Screen instruments={folk} />,
+    },    
+    {
+        headerMode: 'none'
+    }    
 );
 
 export default createAppContainer(WebShopNavigation);
