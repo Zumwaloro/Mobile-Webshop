@@ -1,22 +1,12 @@
 import React from 'react';
-import {useState} from 'react'
 import {View, Text, StyleSheet} from 'react-native';
 import { Zocial as Icon } from '@expo/vector-icons';
 
-const Cart = () => {
-
-    const [items, setItems] = useState([]);
-
-    const calculateTotal = () => {
-        if (items.length !== 0) {
-            return 10;
-        }
-        return 0;
-    }
+const Cart = ({total}) => {
 
     return(
         <View style={styles.container}>
-            <Text style={styles.text}>Total: {calculateTotal()} NOK</Text>
+            <Text style={styles.text}>Total: {total} NOK</Text>
             <Icon name="cart" size={50} color="black" style={styles.icon}></Icon>
         </View>
     )

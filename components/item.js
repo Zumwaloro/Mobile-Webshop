@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { createRef } from 'react';
 import {View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { MaterialIcons as Icon } from '@expo/vector-icons'; 
 
 const Item = ({label, img, price}) => {
-
 
     return (
             <View style={styles.container}>
