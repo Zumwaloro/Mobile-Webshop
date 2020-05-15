@@ -2,7 +2,7 @@ import React from 'react';
 import { FlatList, ScrollView } from 'react-native';
 import Item from './item';
 
-const ItemContainer = ({items}) => {
+const ItemContainer = ({items, handler}) => {
 
     return (
         <ScrollView>
@@ -10,7 +10,11 @@ const ItemContainer = ({items}) => {
                 contentContainerStyle={{flexGrow: 1}}           
                 data={items}
                 renderItem={ ({item}) => (
-                    <Item label={item.label} img={item.img} price={item.price}/>
+                    <Item label={item.label}
+                          img={item.img} 
+                          price={item.price}
+                          action={handler}
+                    />
                 )}
             />
         </ScrollView>

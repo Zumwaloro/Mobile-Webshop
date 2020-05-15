@@ -3,6 +3,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
 
 import CategoriesScreen from '../screens/categories-screen';
+import CheckOutScreen from '../screens/check-out';
 import Screen from '../screens/screen';
 
 import Cort from '../images/bass/cort.png';
@@ -49,12 +50,13 @@ const electric = [
 
 const WebShopNavigation = createStackNavigator(
     {
+       // CheckOut: CheckOutScreen,
         Categories: CategoriesScreen,
-        Acoustic: () => <Screen instruments={acoustic} />,
-        Guitar: () => <Screen instruments={electric} />,
-        Bass: () => <Screen instruments={bass} />,
-        Classical: () => <Screen instruments={classical} />,
-        Folk: () => <Screen instruments={folk} />,
+        Acoustic: screenProps => <Screen instruments={acoustic} action={screenProps.screenProps.handler} />,
+        Guitar: screenProps => <Screen instruments={electric} action={screenProps.screenProps.handler} />,
+        Bass: screenProps => <Screen instruments={bass} action={screenProps.screenProps.handler} />,
+        Classical: screenProps => <Screen instruments={classical} action={screenProps.screenProps.handler} />,
+        Folk: screenProps => <Screen instruments={folk} action={screenProps.screenProps.handler} />,
     },    
     {
         headerMode: 'none'

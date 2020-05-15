@@ -2,7 +2,7 @@ import React, { createRef } from 'react';
 import {View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { MaterialIcons as Icon } from '@expo/vector-icons'; 
 
-const Item = ({label, img, price}) => {
+const Item = ({label, img, price, action}) => {
 
     return (
             <View style={styles.container}>
@@ -10,7 +10,7 @@ const Item = ({label, img, price}) => {
                 <View style={styles.info}>
                     <Text style={styles.text}>{label}</Text>
                     <Text style={styles.text}>{price + " $"}</Text>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={()=>action(price)}>
                         <Icon name="add-box" size={30} color="black" style={styles.icon}/>
                     </TouchableOpacity>
                 </View>
