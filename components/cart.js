@@ -1,13 +1,15 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import { Zocial as Icon } from '@expo/vector-icons';
 
-const Cart = ({total}) => {
+const Cart = ({total, handler}) => {
 
     return(
         <View style={styles.container}>
             <Text style={styles.text}>Total: {total} NOK</Text>
-            <Icon name="cart" size={50} color="black" style={styles.icon}></Icon>
+            <TouchableOpacity onPress={()=>handler()}>
+                <Icon name="cart" size={50} color="black" style={styles.icon}></Icon>
+            </TouchableOpacity>
         </View>
     )
 };

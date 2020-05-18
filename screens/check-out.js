@@ -1,19 +1,15 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-const CheckOutScreen = () => {
+const CheckOutScreen = ({handler}) => {
 
     return(
         <View style={styles.container}>
-            <View style={styles.header}>
-                <Text style={styles.text}>Total: 1000 NOK</Text>
-                <Text style={styles.text}>Items:</Text>
-            </View>
             <View>
                 <Text style={styles.paymentText}>Enter card details:</Text>
             </View>
-            <TouchableOpacity>
-                <View style={styles.footer}>
+            <TouchableOpacity onPress={()=>handler()}>
+                <View style={styles.buttonContainer}>
                     <Text style={styles.text}>Back</Text>
                 </View>
             </TouchableOpacity>
@@ -49,18 +45,16 @@ const styles = StyleSheet.create({
         fontSize: 25,
         fontFamily: 'sans-serif-medium'
     },
-    footer: {
+    buttonContainer: {
         height: 55,
-        backgroundColor: '#FF430A',
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: "space-around",
+        backgroundColor: '#EBA553',
         borderLeftColor: '#FFA81C',
         borderLeftWidth: 5,
-        borderBottomColor: '#FFA81C',
-        borderBottomWidth: 5,
         borderRightColor: '#FFA81C',
         borderRightWidth: 5,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: "space-around"
     }
 });
 

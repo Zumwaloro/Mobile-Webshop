@@ -50,13 +50,13 @@ const electric = [
 
 const WebShopNavigation = createStackNavigator(
     {
-       // CheckOut: CheckOutScreen,
         Categories: CategoriesScreen,
         Acoustic: screenProps => <Screen instruments={acoustic} action={screenProps.screenProps.handler} />,
         Guitar: screenProps => <Screen instruments={electric} action={screenProps.screenProps.handler} />,
         Bass: screenProps => <Screen instruments={bass} action={screenProps.screenProps.handler} />,
         Classical: screenProps => <Screen instruments={classical} action={screenProps.screenProps.handler} />,
         Folk: screenProps => <Screen instruments={folk} action={screenProps.screenProps.handler} />,
+        CheckOut: screenProps => <CheckOutScreen handler={screenProps.screenProps.main} />
     },    
     {
         headerMode: 'none'
