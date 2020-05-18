@@ -1,16 +1,29 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import {
+     View, Text, StyleSheet, TouchableOpacity, FlatList, ScrollView 
+    } from 'react-native';
 
-const CheckOutScreen = ({handler}) => {
+const CheckOutScreen = ({handler, data}) => {
+
+    const list = <ScrollView>
+                    <FlatList
+                        data={data}
+                        renderItem={ ({item}) => (
+                            <Text style={styles.paymentText}>{item.element}: {item.price} NOK</Text>
+                        )}
+                    />
+                 </ScrollView>
+
+    const noItem = <Text style={styles.paymentText}>Your shopping cart is empty.</Text>
 
     return(
         <View style={styles.container}>
             <View>
-                <Text style={styles.paymentText}>Enter card details:</Text>
+              {data.length===0?noItem:list}  
             </View>
             <TouchableOpacity onPress={()=>handler()}>
                 <View style={styles.buttonContainer}>
-                    <Text style={styles.text}>Back</Text>
+                    <Text style={styles.text}>Home</Text>
                 </View>
             </TouchableOpacity>
         </View>
@@ -20,7 +33,7 @@ const CheckOutScreen = ({handler}) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'black',
+        backgroundColor: '#FFD5B5',
         justifyContent: 'space-between'
     },
     header: {
@@ -41,7 +54,7 @@ const styles = StyleSheet.create({
         fontFamily: 'sans-serif-medium'
     },
     paymentText: {
-        color: 'white',
+        color: 'black',
         fontSize: 25,
         fontFamily: 'sans-serif-medium'
     },

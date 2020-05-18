@@ -4,13 +4,18 @@ import { MaterialIcons as Icon } from '@expo/vector-icons';
 
 const Item = ({label, img, price, action}) => {
 
+    const data = {
+        price: price,
+        element: label
+    }
+
     return (
             <View style={styles.container}>
                 <Image source={img} style={styles.img}/>
                 <View style={styles.info}>
                     <Text style={styles.text}>{label}</Text>
                     <Text style={styles.text}>{price + " $"}</Text>
-                    <TouchableOpacity onPress={()=>action(price)}>
+                    <TouchableOpacity onPress={()=>action(data)}>
                         <Icon name="add-box" size={30} color="black" style={styles.icon}/>
                     </TouchableOpacity>
                 </View>
