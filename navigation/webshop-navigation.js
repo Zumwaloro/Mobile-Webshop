@@ -57,7 +57,8 @@ const WebShopNavigation = createStackNavigator(
         Classical: screenProps => <Screen instruments={classical} action={screenProps.screenProps.handler} />,
         Folk: screenProps => <Screen instruments={folk} action={screenProps.screenProps.handler} />,
         CheckOut: screenProps => <CheckOutScreen 
-                                    handler={screenProps.screenProps.main}
+                                    add={screenProps.screenProps.handler}
+                                    remove={screenProps.screenProps.remove}
                                     data={screenProps.screenProps.data}
                                  />
     },    

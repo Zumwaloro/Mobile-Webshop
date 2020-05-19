@@ -1,15 +1,17 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import { SimpleLineIcons as Icon } from '@expo/vector-icons';
 
-const Header = ({label}) => {
+const Header = ({label, action}) => {
     return (
-        <View style={styles.container}>
-            <Text style={styles.text}>
-                <Icon name="music-tone-alt" size={30} color="black"></Icon>
-                {label}
-            </Text>
-        </View>
+        <TouchableOpacity onPress={()=>action()}>
+            <View style={styles.container}>
+                <Text style={styles.text}>
+                    <Icon name="music-tone-alt" size={30} color="black"></Icon>
+                    {label}
+                </Text>
+            </View>
+        </TouchableOpacity>
     );
 }
 

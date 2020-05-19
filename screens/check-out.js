@@ -1,15 +1,14 @@
 import React from 'react';
-import {
-     View, Text, StyleSheet, TouchableOpacity, FlatList, ScrollView 
-    } from 'react-native';
+import { View, Text, StyleSheet, FlatList, ScrollView } from 'react-native';
+import CheckOutItem from '../components/checkout-item';
 
-const CheckOutScreen = ({handler, data}) => {
+const CheckOutScreen = ({data, add, remove}) => {
 
     const list = <ScrollView>
                     <FlatList
                         data={data}
                         renderItem={ ({item}) => (
-                            <Text style={styles.paymentText}>{item.element}: {item.price} NOK</Text>
+                            <CheckOutItem style={styles.paymentText} data={item} action={add} remove={remove}/>
                         )}
                     />
                  </ScrollView>
@@ -21,11 +20,6 @@ const CheckOutScreen = ({handler, data}) => {
             <View>
               {data.length===0?noItem:list}  
             </View>
-            <TouchableOpacity onPress={()=>handler()}>
-                <View style={styles.buttonContainer}>
-                    <Text style={styles.text}>Home</Text>
-                </View>
-            </TouchableOpacity>
         </View>
     );
 };
@@ -36,26 +30,9 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFD5B5',
         justifyContent: 'space-between'
     },
-    header: {
-        justifyContent: 'space-around',
-        flexDirection: 'row',
-        backgroundColor: '#FF430A',
-        padding: 35,
-        borderLeftColor: '#FFA81C',
-        borderLeftWidth: 5,
-        borderTopColor: '#FFA81C',
-        borderTopWidth: 25,
-        borderRightColor: '#FFA81C',
-        borderRightWidth: 5
-    },
-    text: {
-        color: 'black',
-        fontSize: 25,
-        fontFamily: 'sans-serif-medium'
-    },
     paymentText: {
         color: 'black',
-        fontSize: 25,
+        fontSize: 20,
         fontFamily: 'sans-serif-medium'
     },
     buttonContainer: {
