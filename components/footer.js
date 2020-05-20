@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Linking } from 'react-native';
 import { AntDesign as Icon } from '@expo/vector-icons';
 
 const Footer = () => {
@@ -7,8 +7,16 @@ const Footer = () => {
         <View style={styles.container}>
             <Text style={styles.text}>Find us: </Text>
             <Icon name="contacts" size={45} color='black' />
-            <Icon name="facebook-square" size={45} color='black' />            
-            <Icon name="instagram" size={45} color='black' />
+            <Icon name="facebook-square"
+                  size={45}
+                  color='black'
+                  onPress={ ()=>{ Linking.openURL('https://facebook.com')}}
+             />            
+            <Icon name="instagram"
+                  size={45}
+                  color='black'
+                  onPress={ ()=>{ Linking.openURL('https://instagram.com')}}
+             />
         </View>
     );
 }
