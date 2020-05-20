@@ -5,6 +5,7 @@ import { createAppContainer } from 'react-navigation';
 import CategoriesScreen from '../screens/categories-screen';
 import CheckOutScreen from '../screens/check-out';
 import ContactScreen from '../screens/contact';
+import PaymentScreen from '../screens/payment';
 import Screen from '../screens/screen';
 
 import Cort from '../images/bass/cort.png';
@@ -63,7 +64,9 @@ const WebShopNavigation = createStackNavigator(
                                     data={screenProps.screenProps.data}
                                  />,
     
-        Contacts: ContactScreen                            },    
+        Contacts: ContactScreen,
+        Payment: PaymentScreen                            
+    },    
     {
         headerMode: 'none'
     }    

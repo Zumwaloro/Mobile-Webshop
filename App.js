@@ -1,5 +1,5 @@
 import React, {useState, useRef} from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Alert } from 'react-native';
 import Header from './components/header';
 import Cart from './components/cart';
 import Footer from './components/footer';
@@ -53,9 +53,23 @@ export default function App() {
     navigationRef.current._navigation.navigate("CheckOut");
   };
 
-  //Navigate to the check-out screen
+  //Navigate to the contacts screen
   const getContacts = () => {
     navigationRef.current._navigation.navigate("Contacts");
+  };
+
+  //Navigate to the payments screen
+  const doPayments = () => {
+    if (total === 0) {
+      Alert.alert(
+        'Ooopss...',
+        'Your cart is empty. Do some shopping before you try to pay.',
+        [{text: 'Ok'}],
+        {cancallable: true}
+      );
+    } else {
+      navigationRef.current._navigation.navigate("Payment");
+    }    
   };
 
   //Navigate to the main screen
@@ -66,7 +80,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Header label="  Skald Music Webshop  " action={navigateToMain}/>
-      <Cart total={total} handler={doCheckOut} />
+      <Cart total={total} cart={doCheckOut} payment={doPayments}/>
       <WebShopNavigaton 
         screenProps={{
           handler: addTotal,
