@@ -61,7 +61,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Header label="  Skald Music Webshop  " action={navigateToMain}/>
-      <Cart total={total} handler={doCheckOut}/>
+      <Cart total={total} handler={doCheckOut} />
       <WebShopNavigaton 
         screenProps={{
           handler: addTotal,

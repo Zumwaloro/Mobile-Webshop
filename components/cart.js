@@ -1,15 +1,27 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
-import { Zocial as Icon } from '@expo/vector-icons';
+import { Zocial as CartIcon } from '@expo/vector-icons';
+import { FontAwesome as CardIcon } from '@expo/vector-icons';
 
 const Cart = ({total, handler}) => {
+
+    const cartIcon = <TouchableOpacity onPress={()=>handler()}>
+                        <CartIcon name="cart" size={50} color="black" style={styles.icon}></CartIcon>
+                     </TouchableOpacity>
+
+    const cardIcon = <TouchableOpacity onPress={()=>handler()}>
+                        <CardIcon name="credit-card" size={50} color="black" style={styles.icon}></CardIcon>
+                     </TouchableOpacity>
+                
+    var finalIcon = null;
+    useEffect(() => {
+
+    });
 
     return(
         <View style={styles.container}>
             <Text style={styles.text}>Total: {total} NOK</Text>
-            <TouchableOpacity onPress={()=>handler()}>
-                <Icon name="cart" size={50} color="black" style={styles.icon}></Icon>
-            </TouchableOpacity>
+            {cartIcon}
         </View>
     )
 };
