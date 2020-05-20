@@ -53,6 +53,11 @@ export default function App() {
     navigationRef.current._navigation.navigate("CheckOut");
   };
 
+  //Navigate to the check-out screen
+  const getContacts = () => {
+    navigationRef.current._navigation.navigate("Contacts");
+  };
+
   //Navigate to the main screen
   const navigateToMain = () => {
     navigationRef.current._navigation.navigate("Categories");
@@ -70,7 +75,7 @@ export default function App() {
         }}
         ref={navigationRef}
       />
-      <Footer />
+      <Footer handler={getContacts}/>
     </View>
   );
 };

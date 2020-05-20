@@ -2,11 +2,15 @@ import React from 'react';
 import { View, Text, StyleSheet, Linking } from 'react-native';
 import { AntDesign as Icon } from '@expo/vector-icons';
 
-const Footer = () => {
+const Footer = ({handler}) => {
     return(
         <View style={styles.container}>
             <Text style={styles.text}>Find us: </Text>
-            <Icon name="contacts" size={45} color='black' />
+            <Icon name="contacts"
+                  size={45} 
+                  color='black' 
+                  onPress={()=> handler()}
+            />
             <Icon name="facebook-square"
                   size={45}
                   color='black'
