@@ -9,13 +9,23 @@ const PaymentScreen = () => {
     const change =(form)=> {setForm(form)};
 
     const submit = () => {
-        console.log(form.values)
-        Alert.alert(
-            'Success!',
-            'You payment has been registered.',
-            [{text: 'Ok'}],
-            {cancallable: true}
-        )
+        //This is not a complete check of entered details, just very minimal.
+        if (form) {
+            console.log(form.values);
+            Alert.alert(
+                'Success!',
+                'You payment has been registered.',
+                [{text: 'Ok'}],
+                {cancallable: true}
+            ) 
+        } else {
+            Alert.alert(
+                'Error!',
+                'Enter credit card details.',
+                [{text: 'Ok'}],
+                {cancallable: true}
+            )
+        }
     }
 
   return (
