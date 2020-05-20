@@ -13,7 +13,7 @@ const CheckOutScreen = ({data, add, remove}) => {
                     />
                  </ScrollView>
 
-    const noItem = <Text style={styles.paymentText}>Your shopping cart is empty.</Text>
+    const noItem = <Text style={styles.emptyCart}>Your shopping cart is empty.</Text>
 
     return(
         <View style={styles.container}>
@@ -34,6 +34,14 @@ const styles = StyleSheet.create({
         color: 'black',
         fontSize: 20,
         fontFamily: 'sans-serif-medium'
+    },
+    emptyCart: {
+        color: 'black',
+        fontSize: 20,
+        fontFamily: 'sans-serif-medium',
+        alignSelf: "center",
+        paddingTop: 150
+        
     },
     buttonContainer: {
         height: 55,

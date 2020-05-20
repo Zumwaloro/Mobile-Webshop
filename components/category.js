@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontFamily: 'sans-serif-medium',
         paddingRight: 20,
+        paddingLeft: 5,
         paddingTop: 10,
         paddingBottom: 10
     },
