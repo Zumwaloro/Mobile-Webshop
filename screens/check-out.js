@@ -1,17 +1,21 @@
 import React from 'react';
-import { View, Text, StyleSheet, FlatList, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, FlatList, SafeAreaView } from 'react-native';
 import CheckOutItem from '../components/checkout-item';
 
 const CheckOutScreen = ({data, add, remove}) => {
 
-    const list = <ScrollView>
+    const list = <SafeAreaView>
                     <FlatList
                         data={data}
                         renderItem={ ({item}) => (
-                            <CheckOutItem style={styles.paymentText} data={item} action={add} remove={remove}/>
+                            <CheckOutItem style={styles.paymentText}
+                                          data={item}
+                                          action={add}
+                                          remove={remove}
+                            />
                         )}
                     />
-                 </ScrollView>
+                 </SafeAreaView>
 
     const noItem = <Text style={styles.emptyCart}>Your shopping cart is empty.</Text>
 
@@ -43,17 +47,6 @@ const styles = StyleSheet.create({
         paddingTop: 150
         
     },
-    buttonContainer: {
-        height: 55,
-        backgroundColor: '#EBA553',
-        borderLeftColor: '#FFA81C',
-        borderLeftWidth: 5,
-        borderRightColor: '#FFA81C',
-        borderRightWidth: 5,
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: "space-around"
-    }
 });
 
 export default CheckOutScreen;

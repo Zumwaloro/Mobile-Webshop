@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { MaterialIcons as AddIcon } from '@expo/vector-icons';
 import { AntDesign as Icon } from '@expo/vector-icons';     
 
 const CheckOutItem = ({data, action, remove}) => {

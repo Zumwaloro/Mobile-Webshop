@@ -2,11 +2,12 @@ import React from 'react';
 import {View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { MaterialIcons as Icon } from '@expo/vector-icons'; 
 
-const Item = ({label, img, price, action}) => {
+const Item = ({label, img, price, itemKey, action}) => {
 
     const data = {
         price: price,
-        element: label
+        element: label,
+        key: itemKey
     }
 
     return (

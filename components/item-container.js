@@ -1,11 +1,11 @@
 import React from 'react';
-import { FlatList, ScrollView } from 'react-native';
+import { FlatList, SafeAreaView } from 'react-native';
 import Item from './item';
 
 const ItemContainer = ({items, handler}) => {
 
     return (
-        <ScrollView>
+        <SafeAreaView>
             <FlatList
                 contentContainerStyle={{flexGrow: 1}}           
                 data={items}
@@ -14,10 +14,11 @@ const ItemContainer = ({items, handler}) => {
                           img={item.img} 
                           price={item.price}
                           action={handler}
+                          itemKey={item.key}
                     />
                 )}
             />
-        </ScrollView>
+        </SafeAreaView>
     );
 };
 
