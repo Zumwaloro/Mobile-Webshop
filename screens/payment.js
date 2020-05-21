@@ -10,6 +10,7 @@ const PaymentScreen = () => {
 
     const submit = () => {
         //This is not a complete check of entered details, just very minimal.
+        //Here one could check individual fields that are missing, but for our purposes this is enough for now.
         if (form) {
             console.log(form.values);
             Alert.alert(
